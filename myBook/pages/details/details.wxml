@@ -1,0 +1,43 @@
+<view class='details'>
+  <view class='book-details'>
+    <view class='book-t'>
+      <image src='{{}}'></image>
+      <view class='main-msg'>
+        <view class='title'>
+          零基础学python
+        </view>
+        <view class='author-name'>
+        </view>
+        <view class='looknumbers'>
+        </view>
+        <view class='likenumbers'>
+        </view>
+      </view>
+    </view>
+    <view class='book-b'>
+      <button class='btn'>收藏</button>
+      <button class='btn'>分享好友</button>
+    </view>
+  </view>
+  <view class='book-desc'>
+    <view class='title'>
+      简介
+    </view>
+    <view class='desc-main'>
+    </view>
+  </view>
+  <view class='book-catelog'>
+    <view class='show-catelog'>
+      查看目录
+    </view>
+    <view class='catelogs'>
+      共94章
+    </view>
+    <view class='update-time'>
+      更新于两天前
+    </view>
+  </view>
+  <view class='read-btn-wrap'>
+
+  </view>
+</view>
