@@ -1,1 +1,91 @@
-/* pages/details/details.wxss */
+.details{
+  padding: 0 20rpx;
+}
+.details .book-details{
+  height: 450rp;
+  border-bottom: 8rpx solid #e9e9e9;
+}
+.book-t{
+  display: flex;
+  justify-content: space-between;
+}
+.book-t .img{
+  width: 220rpx;
+  height: 300rpx;
+}
+.book-t .main-msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30rpx;
+}
+.main-msg .title{
+  font-size: 16px;
+  color: #333;
+}
+.main-msg .title{
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+}
+.main-msg .same{
+  font-size: 12px;
+  color: #666;
+}
+.book-b{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+.book-b .btn{
+  width: 300rpx;
+  margin: 0;
+  background-color: #e9e9e9;
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 40rpx;
+}
+.book-desc{
+  height: 250rpx;
+  border-bottom: 2rpx solid #e9e9e9
+}
+.book-desc .title{
+  font-size: 16px;
+  margin-top: 30rpx;
+  font-weight: 700;
+}
+.book-desc .desc-main{
+  margin-top: 40rpx;
+  font-size: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+.book-catelog{
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 8rpx solid #e9e9e9;
+}
+.book-catelog .show-catelog{
+  font-size: 14px;
+  font-weight: 700;
+  float: left;
+}
+.book-catelog .catelogs{
+  font-size: 12px;
+  color: #444;
+  float: left;
+  margin-left: 50rpx;
+}
+.book-catelog .update-time{
+  font-size: 12px;
+  color: #333;
+  float: right;
+}
+.read-btn-wrap .btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: green;
+  color: #fff;
+}

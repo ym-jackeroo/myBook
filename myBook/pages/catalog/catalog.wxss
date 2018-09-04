@@ -1,0 +1,11 @@
+.catalog{
+  font-size: 14px;
+  color: #333;
+}
+
+.catalog .link{
+  line-height: 3;
+  border-bottom: 2px solid #e9e9e9;
+  margin-left: 20rpx;
+}
+
