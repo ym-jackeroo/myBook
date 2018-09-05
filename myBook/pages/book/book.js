@@ -6,8 +6,11 @@ Page({
     bookContent: [],
     title: "",
     bookId: "",
+    font:40,
     catalog: [],
-    isShow: false
+    isShow: false,
+    index:"",
+    isLoading:false
   },
   onLoad: function(options) {
     this.setData({
@@ -18,11 +21,19 @@ Page({
     this.getCatalog()
   },
   getData() {
+    this.setData({
+      isLoading:true
+    })
     fetch.get(`/article/${this.data.titleId}`).then(res => {
-      let data = app.towxml.toJson(res.data.article.content, 'markdown');
       this.setData({
-        bookContent: data,
-        title: res.data.title
+        bookContent: res.data.article.content,
+        title: res.data.title,
+        index:res.data.article.index,
+        isLoading:false
+      })
+    }).catch(err=>{
+      this.setData({
+        isLoading: false
       })
     })
   },
@@ -46,6 +57,48 @@ Page({
       isShow:false
     }),
     this.getData()
+  },
+  handleAdd(){
+    this.setData({
+      font:this.data.font+2
+    })
+  },
+  handleReduce(){
+    if(this.data.font<32){
+      wx.showToast({
+        title: '不能再小了！',
+      })
+    }else{
+      this.setData({
+        font:this.data.font-2
+      })
+    }
+  },
+  handlePrev(){
+    let catalog = this.data.catalog
+    if(this.data.index-1>=0){
+      this.setData({
+        titleId: catalog[this.data.index - 1]._id
+      })
+      this.getData()
+    }else{
+      wx.showToast({
+        title: "已是第一章了",
+      })
+    }
+  }, 
+  handleNext(){
+    let catalog = this.data.catalog
+    if(catalog[this.data.index+1]){
+      this.setData({
+        titleId: catalog[this.data.index + 1]._id
+      })
+      this.getData()
+    }else{
+      wx.showToast({
+        title: '已是最后一章了',
+      })
+    }
   },
   onShareAppMessage: function() {
 

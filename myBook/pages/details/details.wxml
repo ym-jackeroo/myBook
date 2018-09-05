@@ -32,7 +32,7 @@
         {{bookData.data.desc}}
       </view>
     </view>
-    <view class='book-catelog'>
+    <view class='book-catelog' bindtap='checkCatalog'>
       <view class='show-catelog'>
         查看目录
       </view>

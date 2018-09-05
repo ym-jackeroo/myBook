@@ -42,6 +42,12 @@ Page({
     wx.navigateTo({
       url: `/pages/details/details?id=${id}`
     })
+  },
+  handleItem(event){
+    const id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/details/details?id=${id}`
+    })
   }
 })
  

@@ -19,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20rpx;
+  border-bottom: 2px solid #f1f1f1;
 }
 
 .content .box-l .img{
@@ -37,20 +38,31 @@
 .content .box-r .book-title{
   font-size: 16px;
   color:#333;
+  font-weight: 700;
 }
 
 .content .box-r .book-desc{
-  color:#666;
+  color:#555;
   font-size: 14px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
   line-height: 1.5;
+  margin-top: 30rpx;
 }
 
-.content .box-r .author{
+.box-r .author .author-l{
   font-size: 12px;
+  color: #000;
+  float: left;
+}
+
+.box-r .author .author-r{
+  font-size: 10px;
   display: flex;
+  color: #444;
+  float: right;
   justify-content: space-between;
+  margin-right: 10rpx;
 }

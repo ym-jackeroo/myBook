@@ -32,6 +32,11 @@ Page({
       url: `/pages/catalog/catalog?id=${this.data.bookId}`,
     })
   },
+  checkCatalog(){
+    wx.navigateTo({
+      url: `/pages/catalog/catalog?id=${this.data.bookId}`,
+    })
+  },
   onShareAppMessage: function () {
   
   }

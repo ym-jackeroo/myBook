@@ -15,7 +15,7 @@
         <view class='title'>
           {{item.title}}
         </view>
-        <view class='content' wx:for='{{item.books}}' wx:key='{{index}}'>
+        <view class='content' wx:for='{{item.books}}' wx:key='{{index}}' bindtap="handleItem" data-id="{{item._id}}" >
           <view class='box-l'>
             <image src='{{item.img}}' class='img'></image>
           </view>
@@ -27,7 +27,7 @@
             <view class='author'>
               <text class='author-l'>{{item.author}}</text>
               <view class='author-r'>
-                <text class='update-time'>两天前</text>
+                <text class='update-time'>两天前 </text>
                 <text class='category'>后端开发 </text>
                 <text class='many'>有{{item.looknums}}人在看</text>
               </view>
