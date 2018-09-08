@@ -1,0 +1,19 @@
+<view class='content' wx:for='{{bookCollection}}' wx:key='{{index}}' bindtap="handleItem"  bindlongpress="longpress" wx:for-item='collectionItem' data-id="{{collectionItem.book._id}}" wx:if='{{collectionItem.book !== null}}'>
+  <view class='box-l'>
+    <image src='{{collectionItem.book.img}}' class='img'></image>
+  </view>
+  <view class='box-r'>
+    <view>
+      <view class='book-title'>{{collectionItem.book.title}}</view>
+      <view class='book-desc'>{{collectionItem.book.desc}}</view>
+    </view>
+    <view class='author'>
+      <text class='author-l'>{{collectionItem.book.author}}</text>
+      <view class='author-r'>
+        <text class='update-time'>两天前 </text>
+        <text class='category'>后端开发 </text>
+        <text class='many'>有{{collectionItem.book.looknums}}人在看</text>
+      </view>
+    </view>
+  </view>
+</view>

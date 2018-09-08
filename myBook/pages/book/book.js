@@ -25,6 +25,7 @@ Page({
       isLoading:true
     })
     fetch.get(`/article/${this.data.titleId}`).then(res => {
+      wx.setNavigationBarTitle({ title: res.data.title })   
       this.setData({
         bookContent: res.data.article.content,
         title: res.data.title,
@@ -100,6 +101,7 @@ Page({
       })
     }
   },
+  
   onShareAppMessage: function() {
 
   }

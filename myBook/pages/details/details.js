@@ -4,8 +4,6 @@ Page({
   data: {
     bookId:"",
     bookData:[],
-    bookDate1:[],
-    bookDate2:[],
     isLoading:false,
   },
   onLoad: function (options) {
@@ -49,7 +47,7 @@ Page({
           type:'success',
           duration:1000
         })
-        let bookData = [...this.data.bookData]
+        let bookData =this.data.bookData
         bookData.isCollect = 1
         this.setData({
           bookDate:bookData
@@ -61,28 +59,17 @@ Page({
   handleDelete(){
     fetch.delete(`/collection/${this.data.bookId}`).then(res=>{
       if (res.code == 200) {
-        wx.showToast({
-          title: '删除收藏成功',
-          type: 'success',
-          duration: 1000
-        })
-        let bookData = this.data.bookData
-        bookData.isCollect = 0
-        this.setData({
-          bookData: bookData
-        })
-        this.getData()  
-        // wx.showModal({
-        //   title: '删除收藏',
-        //   content: '确定取消收藏？',
-        //   success:function(res){
-        //     if(res.confirm){
-        //       console.log(res)
-        //     }else if(res.cancel){
+        wx.showModal({
+          title: '删除收藏',
+          content: '确定取消收藏？',
+          success:res=>{
+            if(res.confirm){
+              this.getData()
+            }else if(res.cancel){
 
-        //     }
-        //   }
-        // })
+            }
+          }
+        })
       }
     })
   },

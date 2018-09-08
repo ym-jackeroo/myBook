@@ -1,7 +1,9 @@
 <!--index.wxml-->
+
 <view>
   <view class="container index">
     <image src='/static/image/Ball.svg' class="loading" wx:if="{{isLoading}}"></image>
+    
     <view wx:else>
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{swiperData}}" wx:key="{{index}}">
@@ -16,6 +18,7 @@
           <view class='title'>
             {{item.title}}
           </view>
+
           <view class='content' wx:for='{{item.books}}' wx:key='{{index}}' bindtap="handleItem" wx:for-item='bookItem' data-id="{{bookItem._id}}">
             <view class='box-l'>
               <image src='{{bookItem.img}}' class='img'></image>
@@ -28,16 +31,18 @@
               <view class='author'>
                 <text class='author-l'>{{bookItem.author}}</text>
                 <view class='author-r'>
-                  <text class='update-time'>两天前 </text>
-                  <text class='category'>后端开发 </text>
+                  <text class='update-time'>{{bookItem.updateTime}}</text>
                   <text class='many'>有{{bookItem.looknums}}人在看</text>
                 </view>
               </view>
             </view>
           </view>
+
         </view>
       </view>
+
     </view>
   </view>
   <loadingBottom has-more="{{hasMore}}" wx:if="{{!isLoading}}"></loadingBottom>
 </view>
+

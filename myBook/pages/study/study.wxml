@@ -1,0 +1,26 @@
+<wxs module="filters" src="./filters.wxs"></wxs>
+<image src='/static/image/Ball.svg' class="loading" wx:if="{{isLoading}}"></image>
+<view class='study' wx:else>
+  <view class='studyItem' wx:for="{{bookReading}}" wx:key="{{index}}" wx:for-item='item'>
+    <view>
+      <image src='{{item.book.img}}' class='img'></image>
+    </view>
+    <view class='content'>
+      <view class='container'>
+        <text class='title'>{{item.book.title}}</text>
+        <text class='chapter'>书籍{{item.title.index}}/{{item.title.total}}章节</text>
+        <progress percent="{{filters.toFix(item.title.index*100/item.title.total)}}" show-info="true" color="#000" stroke-width="4" activeColor="green" backgroundColor="#ccc" class='progress'/>
+        <view class='pt'>
+          <text class='previous'>上次查看：{{item.title.title}}</text>
+          <text class='time'>0分前</text>
+        </view>
+      </view>
+      <view class='btn'>
+        <navigator url="{{'/pages/book/book?id=' + item.title._id + '&bookId=' + item.title.bookId}}">
+          <button>继续阅读</button>
+        </navigator>
+        <button bindtap='toview' data-id="{{item.book._id}}">查看文档</button>
+      </view>
+    </view>
+  </view>
+</view>
